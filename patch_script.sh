@@ -12,3 +12,8 @@ touch ${OMNI_DIR}/debian/python3-omniorb-omg.install
 touch ${OMNI_DIR}/debian/python3-omniorb.install
  
 patch -d ${OMNI_DIR}/debian < ${OMNI_NAME}_python3.patch
+
+GCC_VER=`gcc -dumpversion`
+if [ ${GCC_VER} -gt 7 ]; then
+  patch -d ${OMNI_DIR}/modules < ${OMNI_NAME}_gcc8.patch
+fi 

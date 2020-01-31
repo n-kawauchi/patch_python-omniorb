@@ -1,0 +1,14 @@
+--- modules/omnipy_sysdep.h	2020-01-31 18:36:07.259534200 +0900
++++ modules/omnipy_sysdep_mod.h	2020-01-31 18:40:10.757139442 +0900
+@@ -67,9 +67,9 @@ String_AS_STRING_AND_SIZE(PyObject* obj,
+ 
+ #  if (PY_VERSION_HEX >= 0x03030000) // Python 3.3
+ 
+-#    define String_AsString(o)               PyUnicode_AsUTF8(o)
++#    define String_AsString(o)               (char*)PyUnicode_AsUTF8(o)
+ #    define String_GET_SIZE(o)               PyUnicode_GET_LENGTH(o)
+-#    define String_AS_STRING(o)              PyUnicode_AsUTF8(o)
++#    define String_AS_STRING(o)              (char*)PyUnicode_AsUTF8(o)
+ 
+ #    define Unicode_GET_SIZE(o)              PyUnicode_GET_LENGTH(o)
+ 
