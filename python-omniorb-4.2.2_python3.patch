@@ -144,8 +144,8 @@ diff -uprN debian/rules debian_mod/rules
 -	dh_strip -ppython-omniorb --dbg-package=python-omniorb-dbg
 +	#dh_python3 -a
 +	#dh_strip -ppython3-omniorb --dbg-package=python3-omniorb-dbg
-+	mv debian/python3-omniorb/usr/lib/python3.6/site-packages debian/python3-omniorb/usr/lib/python3.6/dist-packages
-+	mv debian/python3-omniorb/usr/lib/python3.6 debian/python3-omniorb/usr/lib/python3
++	mv debian/python3-omniorb/usr/lib/python$(PYVERS)/site-packages debian/python3-omniorb/usr/lib/python$(PYVERS)/dist-packages
++	mv debian/python3-omniorb/usr/lib/python$(PYVERS) debian/python3-omniorb/usr/lib/python3
  	dh_link -a
  	dh_compress -a
  	dh_fixperms -a
